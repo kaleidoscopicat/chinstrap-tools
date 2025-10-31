@@ -1,7 +1,7 @@
 {
-  "name": "starshade-syntax-highlighting",
-  "displayName": "StarShade Syntax Highlighting",
-  "description": "Adds Syntax and Compiling methods to add StarShade to VSCode",
+  "name": "chinstrap-tools",
+  "displayName": "Chinstrap Tools",
+  "description": "Adds Syntax Highlighting and in-editor compilation to add Chinstrap to VSCode",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.105.0"
@@ -9,43 +9,49 @@
   "categories": [
     "Programming Languages"
   ],
-  "main": "./src/lang.ts",
+  "main": "./out/lang.js",
   "contributes": {
     "commands": [
       {
-        "command": "star-shade.set_exe",
-        "title": "Set StarShade Compiler"
+        "command": "chinstrap.set_exe",
+        "title": "Chinstrap: Link Compiler"
       },
 
       {
-        "command": "star-shade.compile",
-        "title": "Compile into HLSL"
+        "command": "chinstrap.compile",
+        "title": "Chinstrap: Compile into HLSL"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "star-shade.set_exe",
-          "when": "editorLangId == star-shade"
+          "command": "chinstrap.set_exe",
+          "when": "editorLangId == chinstrap"
         },
 
         {
-          "command": "star-shade.compile",
-          "when": "editorLangId == star-shade"
+          "command": "chinstrap.compile",
+          "when": "editorLangId == chinstrap"
         }
       ]
     },
     "languages": [{
-      "id": "star-shade",
-      "aliases": ["StarShade", "star-shade"],
-      "extensions": [".star"],
+      "id": "chinstrap",
+      "aliases": ["Chinstrap", "chinstrap"],
+      "extensions": [".csp"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "star-shade",
-      "scopeName": "source.star",
-      "path": "./syntaxes/star-shade.tmLanguage.json"
-    }]
+      "language": "chinstrap",
+      "scopeName": "source.chinstrap",
+      "path": "./syntaxes/chinstrap.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "chinstrap",
+        "path": "./snippets/chinstrap.code-snippets.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

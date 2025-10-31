@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Chinstrap",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#strings" },
+		{ "include": "#numbers" },
+		{ "include": "#keywords" },
+		{ "include": "#types" },
+		{ "include": "#functions" },
+		{ "include": "#decorators" },
+		{ "include": "#constants" },
+		{ "include": "#operators" },
+		{ "include": "#variables" }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{ "name": "comment.line.double-dollar.chinstrap", "match": "\\$.*$" }	
+			]
+		},
+		"strings": {
+			"patterns": [
+				{ "name": "string.quoted.double.chinstrap", "begin": "\"", "end": "\"", "captures": { "0": { "name": "string.quoted.double.chinstrap" } } },
+				{ "name": "string.quoted.single.chinstrap", "begin": "'", "end": "'", "captures": { "0": { "name": "string.quoted.single.chinstrap" } } }
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{ "name": "constant.numeric.float.chinstrap", "match": "\\b\\d+\\.\\d+\\b" },
+				{ "name": "constant.numeric.integer.chinstrap", "match": "\\b\\d+\\b" },
+				{ "name": "constant.numeric.property_definition.chinstrap", "match": "\\b\\d+\\D\\b" }
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{ "name": "keyword.control.chinstrap", "match": "\\b(fn|return|if|else|elif|for|while|in|break|continue|struct)\\b" }	
+			]
+		},
+		"types": {
+			"patterns": [
+				{ "name": "storage.type.chinstrap", "match": "\\b(Vector2|Vector3|Vector4|Color|Matrix4x4|float|int|Texture2D|SamplerState|float3|float4)\\b" }	
+			]
+		},
+		"functions": {
+			"patterns": [
+				{ "name": "entity.name.function.chinstrap", "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\()" }	
+			]
+		},
+		"decorators": {
+			"patterns": [
+				{ "name": "keyword.control.annotation.chinstrap", "match": "@[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()" }	
+			]
+		},
+		"constants": {
+			"patterns": [
+				{ "name": "constant.language.chinstrap", "match": "\\b(true|false|null)\\b" }	
+			]
+		},
+		"operators": {
+			"patterns": [
+				{ "name": "keyword.operator.chinstrap", "match": "[+\\-*/%=<>!&|^~]+" }	
+			]
+		},
+		"variables": {
+			"patterns": [
+				{ "name": "variable.constant.chinstrap", "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b" }
+			]
+		}
+	},
+	"scopeName": "source.chinstrap"
+}

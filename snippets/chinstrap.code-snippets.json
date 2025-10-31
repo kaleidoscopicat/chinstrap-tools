@@ -1,0 +1,30 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:params}) {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Create a new function"
+  },
+  "Uniform": {
+    "prefix": "@uniform",
+    "body": ["@uniform(${1:Name});"],
+    "description": "Declare one or more uniform variables"
+  },
+  "Property": {
+    "prefix": "@property",
+    "body": ["@property(\"${1:Name}\", ${2:Type});"],
+    "description": "Declare one or more properties"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": [
+      "${1:Name} = {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Create a new table / object"
+  }
+}
