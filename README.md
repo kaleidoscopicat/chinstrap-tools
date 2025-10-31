@@ -1,5 +1,5 @@
-# StarShade Lang Extension
-This extension adds in-editor syntax highlighting, autofill, and compilation of your StarShade scripts.
+# Chinstrap Tools Extension
+This extension adds in-editor syntax highlighting, autofill, and compilation of your Chinstrap scripts.
 
 ## Extension Settings
 NONE
